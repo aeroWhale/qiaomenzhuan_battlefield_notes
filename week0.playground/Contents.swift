@@ -1,4 +1,5 @@
-//: Playground - noun: a place where people can play
+// iOS battlefield week 0 notes
+// dylan
 
 import Foundation
 
@@ -25,7 +26,7 @@ struct Dummy {
     let b: Bool
 }
 let haha = Dummy(a: "", b: false)
-// haha.a = "aaa"
+// haha.a = "aaa"   illegal
 
 let hahaha = "😭"
 // Tuple
@@ -43,8 +44,8 @@ let (code, response) = successWithNames
 debugPrint(code)
 debugPrint(response)
 
-// use _ to access 1 value in tuple.
-let (_, anotherResponse) = successWithNames
+// use _ to access only 1 value in tuple.
+let (_, anotherResponse) = successWithNames     // 只访问 successWithNames 里的 responseString
 debugPrint(anotherResponse)
 
 //
@@ -88,14 +89,14 @@ let isAlexHandsome = ok ? "YES" : "NO"
 for index in 1...5 {
     debugPrint(index)
 }
-// 不包含
+// 不包含5
 for index in 1..<5 {
     debugPrint(index)
 }
 
 // Optional
 var userInput: String?
-// nil colaescing Swift 独家
+// nil colaescing - Swift 独家
 let value = userInput ?? "not input given"
 
 var light = "red"
@@ -127,7 +128,7 @@ for element in collection {
 // 模式匹配
 let origin = (x: 0.0, y: 0.0)
 let pointA = (x: 1.0, y: -1.0)
-// 一般的判断是否相等
+// 一般的判断值是否相等
 if pointA.x == origin.x && pointA.y == origin.y {
     debugPrint("same")
 }
@@ -185,6 +186,6 @@ if let value = number, value % 2 == 0 {     // 先拆开看一看，有值的话
 let value2 = number ?? 0     // 如果 number 有值，赋值给value，否则value = 0
 
 // 硬上弓，危险
-debugPrint("\(number!)")    // 告诉编译器 我很确定这里有值，强制取出来。如果没有的话，程序会崩
+debugPrint("\(number!)")    // 告诉编译器 我很确定这里有值，强制取出来。但如果没有值的话，程序会崩
 
 let anotherNumber: Int?? = nil // 外面又套了一层，这样的话需要经过两次解包
